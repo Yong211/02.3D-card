@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-migrate-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background: #090909;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .cards{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100vw;
+        }
+
+        
+        .card-contents{ /* 카드 크기 변경 시 이 곳 width, height 변경.*/
+            position: relative;
+            width: 250px;
+            height: 350px;
+            border-radius: 30px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-out;
+            transform: rotateY(-180deg);
+        }
+        .contents-wrap:hover .card-contents{
+            transform: rotateY(0deg);
+        }
+        .card-front, .card-back{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 10px;
+            border-radius: 30px;
+            transform-style: preserve-3d;
+            color: #fff;
+            backface-visibility: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+        }
+        .card-front{
+            /* width: 100%;
+            height: 100%; */
+            align-items: center;
+            transform: rotateY(180deg);
+            
+            background: #febd2b;
+        }
+        .card-front::before{
+            content: "";
+            position: absolute;
+            inset: 1rem;
+            border-radius: 20px;
+            border: 3px solid yellow;
+            /* transform: translateY(2rem); */
+        }
+        .front-title{
+            font-size: 30px;
+            line-height: 120%;
+            transform: translateY(4.4rem);
+            transform: translateZ(50px);
+        }
+        .sub-title{
+            transform: translateZ(30px);
+            letter-spacing: 3px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        .card-back{
+            width: 100%;
+            height: 100%;
+            gap: 0.5rem;
+            /* transform: translateY(-180deg); */
+            background: #999;
+        }
+        .back-title{
+            align-self: center;
+            transform: translateZ(50px);
+            font-size: 20px;
+            font-weight: 600;
+            color: yellow;
+        }
+        .btn{
+            align-self: center;
+            text-align: center;
+            padding: 0.5rem 2.2rem;
+            margin-top: 1rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            transform: translateZ(50px);
+            transition: 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
+            color: yellow;
+        }
+        .btn:hover{
+            background: #888;
+            color: white;
+            border: 2px solid rgb(185, 164, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <div class="contents-wrap">
+            <div class="card-contents">
+                <div class="card-front">
+                    <p class="sub-title">SUB TITLE</p>
+                    <h1 class="front-title">FRONT TITLE 1</h1>
+                    <p class="sub-title">SUB TITLE2</p>
+                </div>
+                <div class="card-back">
+                    <h2 class="back-title">BACK-TITLE</h2>
+                    <a href="#" class="btn">BUTTON</a>
+                </div>
+            </div>
+        </div>
+        <div class="contents-wrap">
+            <div class="card-contents">
+                <div class="card-front">
+                    <p class="sub-title">SUB TITLE</p>
+                    <h1 class="front-title">FRONT TITLE 2</h1>
+                    <p class="sub-title">SUB TITLE2</p>
+                </div>
+                <div class="card-back">
+                    <h2 class="back-title">BACK-TITLE</h2>
+                    <a href="#" class="btn">BUTTON</a>
+                </div>
+            </div>
+        </div>
+        <div class="contents-wrap">
+            <div class="card-contents">
+                <div class="card-front">
+                    <p class="sub-title">SUB TITLE</p>
+                    <h1 class="front-title">FRONT TITLE 3</h1>
+                    <p class="sub-title">SUB TITLE2</p>
+                </div>
+                <div class="card-back">
+                    <h2 class="back-title">BACK-TITLE</h2>
+                    <a href="#" class="btn">BUTTON</a>
+                </div>
+            </div>
+        </div>
+        <div class="contents-wrap">
+            <div class="card-contents">
+                <div class="card-front">
+                    <p class="sub-title">SUB TITLE</p>
+                    <h1 class="front-title">FRONT TITLE 4</h1>
+                    <p class="sub-title">SUB TITLE2</p>
+                </div>
+                <div class="card-back">
+                    <h2 class="back-title">BACK-TITLE</h2>
+                    <a href="#" class="btn">BUTTON</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // $('.card-contents').mouseover(function(){
+        //     this.css('rotateY','0')
+        // })
+        
+        
+    </script>
+</body>
+</html>
